@@ -1,7 +1,3 @@
-AllCops:
-  Exclude:
-    # Do not run against provided test files
-    - '**/*_test.rb'
 Metrics/LineLength:
   Max: 80
 

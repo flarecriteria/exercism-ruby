@@ -15,18 +15,17 @@ end
 # Test data version:
 # 7668b09 Added hello world test definition
 
+# Hello World Test
 class HelloWorldTest < Minitest::Test
   def test_no_name
     assert_equal 'Hello, World!', HelloWorld.hello
   end
 
   def test_sample_name
-    skip
     assert_equal 'Hello, Alice!', HelloWorld.hello('Alice')
   end
 
   def test_other_sample_name
-    skip
     assert_equal 'Hello, Bob!', HelloWorld.hello('Bob')
   end
 end
