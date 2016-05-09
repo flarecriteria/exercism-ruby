@@ -1,0 +1,84 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.2.0)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
+    byebug (8.2.5)
+    childprocess (0.5.9)
+      ffi (~> 1.0, >= 1.0.11)
+    coderay (1.1.1)
+    debug_inspector (0.0.2)
+    erubis (2.7.0)
+    ffi (1.9.10)
+    iniparse (1.4.2)
+    interception (0.5)
+    method_source (0.8.2)
+    minitest (5.8.4)
+    overcommit (0.33.0)
+      childprocess (~> 0.5.8)
+      iniparse (~> 1.4)
+    parser (2.3.1.0)
+      ast (~> 2.2)
+    powerpack (0.1.1)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rescue (1.4.2)
+      interception (>= 0.5)
+      pry
+    pry-stack_explorer (0.4.9.2)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
+    rack (1.6.4)
+    rainbow (2.1.0)
+    rake (11.1.2)
+    rubocop (0.39.0)
+      parser (>= 2.3.0.7, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.8.0)
+    sass (3.4.22)
+    scss_lint (0.48.0)
+      rake (>= 0.9, < 12)
+      sass (~> 3.4.15)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
+    slim_lint (0.8.0)
+      rake (>= 10, < 12)
+      rubocop (>= 0.36.0)
+      slim (~> 3.0)
+      sysexits (~> 1.1)
+    slop (3.6.0)
+    sysexits (1.2.0)
+    temple (0.7.6)
+    tilt (2.0.2)
+    unicode-display_width (1.0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  better_errors
+  byebug
+  minitest
+  overcommit
+  pry-rescue
+  pry-stack_explorer
+  rubocop
+  scss_lint
+  slim_lint
+
+RUBY VERSION
+   ruby 2.3.0p0
+
+BUNDLED WITH
+   1.12.3

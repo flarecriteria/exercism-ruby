@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+ruby '2.3.0'
+gem 'byebug'
+gem 'better_errors'
+gem 'minitest'
+gem 'overcommit'
+gem 'pry-rescue'
+gem 'pry-stack_explorer'  
+gem 'rubocop'
+gem 'scss_lint', require: false
+gem 'slim_lint'
