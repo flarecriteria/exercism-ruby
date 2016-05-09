@@ -5,7 +5,7 @@ gem 'better_errors'
 gem 'minitest'
 gem 'overcommit'
 gem 'pry-rescue'
-gem 'pry-stack_explorer'  
+gem 'pry-stack_explorer'
 gem 'rubocop'
 gem 'scss_lint', require: false
 gem 'slim_lint'

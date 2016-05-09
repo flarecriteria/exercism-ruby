@@ -39,6 +39,9 @@ PreCommit:
 
   TrailingWhitespace:
     enabled: true
+    exclude:
+      - '**/*.md'
+
 
   YamlSyntax:
     enabled: true
