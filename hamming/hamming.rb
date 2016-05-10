@@ -19,7 +19,7 @@ class Hamming
   end
 end
 
-# Raised when strands provided are of unequal lenth
+# Raised when strands provided are of unequal length
 class UnequalLengthError < ArgumentError
   def message
     'Strand lengths are unequal. Strands are expected to have the same length.'
