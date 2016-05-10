@@ -5,7 +5,7 @@ module Complement
   VERSION = 3
 
   # Hash of DNA complements: keys are expected to be a single char string
-  COMPLEMENTS = { 'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U' }.freeze
+  COMPLEMENTS = { G: 'C', C: 'G', T: 'A', A: 'U' }.freeze
   VALIDATION_REGEX = /^[#{COMPLEMENTS.keys.join}]*$/
 
   # Given a DNA strand, returns its RNA complement (per RNA transcription).
