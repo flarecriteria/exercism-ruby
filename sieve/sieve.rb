@@ -16,7 +16,7 @@ class Sieve
       arr[num] = true
       prime = num
       while num < @up_to_num
-        num += 1
+        num += prime
         next unless arr[num].nil? && (num % prime == 0)
         arr[num] = false
       end
