@@ -9,14 +9,13 @@ class Sieve
 
   # Everytime I go to optimize this it's no longer the sieve
   #
-  def primes # rubocop:disable Metrics/MethodLength
+  def primes
     arr = [false, false]
     (2..@up_to_num).each do |num|
       next unless arr[num].nil?
       arr[num] = true
       prime = num
-      while num < @up_to_num
-        num += prime
+      while (num += prime) <= @up_to_num
         arr[num].nil? && arr[num] = false
       end
     end
