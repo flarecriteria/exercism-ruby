@@ -17,8 +17,7 @@ class Sieve
       prime = num
       while num < @up_to_num
         num += prime
-        next unless arr[num].nil? && (num % prime == 0)
-        arr[num] = false
+        arr[num].nil? && arr[num] = false
       end
     end
     arr.size.times.select { |i| arr[i] }
