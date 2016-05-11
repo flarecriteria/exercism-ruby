@@ -9,9 +9,10 @@ class Sieve
 
   # Everytime I go to optimize this it's no longer the sieve
   #
-  def primes
-    arr = Array.new(@up_to_num)
-    (2..@up_to_num).each do |num|
+  def primes # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+    arr = Array.new(@up_to_num + 1)
+    arr[2] = true unless @up_to_num < 2
+    (3..@up_to_num).step(2).each do |num|
       next unless arr[num].nil?
       arr[num] = true
       prime = num
