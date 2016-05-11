@@ -1,6 +1,6 @@
 ##
-# Adds pangram to any class with to_s
-module PangramRole
+# Adds pangram test to any class with to_s
+module PangramTestable
   # Tests to see if self.to_s returns a pangram.
   # A pangram contains all of the characters in an alphabet at least once.
   #
@@ -21,12 +21,12 @@ module PangramRole
 end
 
 ##
-# Wraps PangramRole
+# Wraps PangramTestable
 module Pangram
   VERSION = 1
 
   def is_pangram?(str) # rubocop:disable Style/PredicateName
-    str.extend(PangramRole)
+    str.extend(PangramTestable)
     str.pangram?
   end
   module_function :is_pangram?
