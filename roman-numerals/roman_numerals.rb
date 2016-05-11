@@ -1,5 +1,9 @@
 ##
 # Coverts to_i to roman numerals
+#
+# Include RomanNumerals::NumericInstanceMethods instead of this module
+# for instance methods that work with to_i
+#
 module RomanNumerals
   ROMAN_NUMERALS = {
     M: 1000,
@@ -18,11 +22,18 @@ module RomanNumerals
   }.freeze
 
   ##
-  # Instance methods live here.
-  # Keep namespaces clean and constants constant
-  module InstanceMethods
+  # Instance methods called on things with to_i live here.
+  module NumericInstanceMethods
     def to_roman
-      remaining = to_i
+      RomanNumerals::to_roman(self) # rubocop:disable Style/ColonMethodCall
+    end
+  end
+
+  ##
+  # Class methods live in here
+  module ClassMethods
+    def to_roman(obj)
+      remaining = obj.to_i
       raise MustHavePositiveIntValue unless remaining >= 1
       raise NotImplementedError unless remaining < 4000
       # Interestingly, even with string keys, ruby 2.3.0 requires me to use to_s
@@ -41,8 +52,10 @@ module RomanNumerals
   end
 
   class MustHavePositiveIntValue < ArgumentError; end
+
+  extend(ClassMethods)
 end
 
 # Still not adding VERSION to fixed num
 # Happier with this
-Fixnum.include(RomanNumerals::InstanceMethods)
+Fixnum.include(RomanNumerals::NumericInstanceMethods)
