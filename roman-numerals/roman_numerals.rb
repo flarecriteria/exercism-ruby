@@ -20,17 +20,19 @@ module RomanNumerals
   def to_roman
     remaining = to_i
     raise ArgumentError unless remaining >= 1
-    raise NotImplementedError unless remaining <= 3000
-    roman_numeral = ''
-    # Interestingly, even with these as strings, ruby requires me to use to_s,
+    raise NotImplementedError unless remaining < 4000
+    # Interestingly, even with string keys, ruby 2.3.0 requires me to use to_s,
     # or a type error is thrown. I'm not quite sure it's supposed to do that.
     # So I changed the hash back to symbols, I like the way that looks better
     # anyways.
-    ROMAN_NUMERALS.each do |roman_glyph, value|
-      (remaining / value).times.each { roman_numeral << roman_glyph.to_s }
-      remaining = remaining % value
+    #
+    # Did not realize each_with_object or divmod existed till I saw
+    # @DebbieGillespie's anwser. Much better
+    ROMAN_NUMERALS.each_with_object('') do |(roman_glyph, value), out|
+      next unless remaining >= value
+      (quotient, remaining) = remaining.divmod(value)
+      out << roman_glyph.to_s * quotient
     end
-    roman_numeral
   end
 end
 
