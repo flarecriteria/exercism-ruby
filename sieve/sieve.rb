@@ -10,7 +10,7 @@ class Sieve
   # Everytime I go to optimize this it's no longer the sieve
   #
   def primes
-    arr = [false, false]
+    arr = Array.new(@up_to_num)
     (2..@up_to_num).each do |num|
       next unless arr[num].nil?
       arr[num] = true
