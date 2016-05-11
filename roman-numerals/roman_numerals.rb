@@ -23,7 +23,7 @@ module RomanNumerals
   module InstanceMethods
     def to_roman
       remaining = to_i
-      raise ArgumentError unless remaining >= 1
+      raise MustHavePositiveIntValue unless remaining >= 1
       raise NotImplementedError unless remaining < 4000
       # Interestingly, even with string keys, ruby 2.3.0 requires me to use to_s
       # or a type error is thrown. I'm not quite sure it's supposed to do that.
@@ -39,6 +39,8 @@ module RomanNumerals
       end
     end
   end
+
+  class MustHavePositiveIntValue < ArgumentError; end
 end
 
 # Still not adding VERSION to fixed num
