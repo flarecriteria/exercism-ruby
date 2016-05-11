@@ -26,9 +26,9 @@ module RomanNumerals
     # or a type error is thrown. I'm not quite sure it's supposed to do that.
     # So I changed the hash back to symbols, I like the way that looks better
     # anyways.
-    ROMAN_NUMERALS.each do |k, v|
-      (remaining / v).times.each { roman_numeral << k.to_s }
-      remaining = remaining % v
+    ROMAN_NUMERALS.each do |roman_glyph, value|
+      (remaining / value).times.each { roman_numeral << roman_glyph.to_s }
+      remaining = remaining % value
     end
     roman_numeral
   end
