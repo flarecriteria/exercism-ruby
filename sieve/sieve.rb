@@ -15,7 +15,7 @@ class Sieve
     (3..@up_to_num).step(2).each do |num|
       next unless arr[num].nil?
       arr[num] = true
-      (num + num..@up_to_num).step(num) { |i| arr[i] = false }
+      (num**2..@up_to_num).step(num) { |i| arr[i] = false }
     end
     @primes = arr.size.times.select { |i| arr[i] }
   end
