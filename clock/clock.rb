@@ -25,4 +25,8 @@ class Clock
     @minutes = (other + @minutes) % 1440
     self
   end
+
+  def -(other)
+    self.+(other * -1)
+  end
 end
