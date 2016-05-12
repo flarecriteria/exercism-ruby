@@ -5,12 +5,11 @@ class Clock
   VERSION = 1
 
   def self.at(hours, minutes)
-    new(hours, minutes)
+    new(hours * 60 + minutes)
   end
 
-  def initialize(hours, minutes)
-    @minutes = 0
-    self + (hours * 60 + minutes)
+  def initialize(minutes)
+    @minutes = minutes % 1440
   end
 
   def to_s
@@ -21,12 +20,7 @@ class Clock
     to_s == other.to_s
   end
 
-  def +(other)
-    @minutes = (other + @minutes) % 1440
-    self
-  end
-
-  def -(other)
-    self.+(other * -1)
+  def +(minutes) # rubocop:disable Style/OpMethod
+    Clock.new(minutes + @minutes)
   end
 end
