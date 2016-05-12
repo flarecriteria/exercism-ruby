@@ -5,7 +5,7 @@ class Clock
   VERSION = 1
 
   def self.at(hours, minutes)
-    Clock.new(hours, minutes)
+    new(hours, minutes)
   end
 
   def initialize(hours, minutes)
