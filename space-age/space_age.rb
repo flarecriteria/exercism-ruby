@@ -24,13 +24,9 @@ class SpaceAge
     (@earth_years * SECONDS_IN_EARTH_YEAR).to_f
   end
 
-  def method_missing(method_name, *arguments, &block)
-    planet = method_name.to_s[/(?:on_)(.*)/, 1].to_sym
-    ORBITAL_PERIODS[planet] || super
-    (@earth_years / ORBITAL_PERIODS[planet]).to_f
-  end
-
-  def respond_to_missing?(method_name, include_private = false)
-    method_name.to_s.start_with?('on_') || super
+  ORBITAL_PERIODS.keys.each do |obj|
+    define_method "on_#{obj}" do
+      (@earth_years / ORBITAL_PERIODS[obj]).to_f
+    end
   end
 end
